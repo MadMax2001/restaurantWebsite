@@ -1,0 +1,200 @@
+body{
+    margin: 50px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(images/topography.svg), linear-gradient(110deg, #f93d66, #6d47d9);
+    background-size: 340px, auto;
+    background-attachment: fixed;
+    margin-bottom: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Merriweather', serif;
+}
+
+.btn ,.intro h1,.intro h3,.about a{
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
+    color: black;
+    background-color: #ffc600;
+    padding: 5px 10px;
+}
+
+nav{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    margin-bottom: 30px;
+}
+
+.intro{
+    background: white url(images/taco.jpg);
+    background-position: bottom right;
+    background-size: cover;
+    min-height: 400px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    grid-area: intro;
+}
+
+[aria-controls="menu-list"] {
+    display: none;
+  }
+
+.header{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "intro intro price1" "intro intro price2";
+}
+
+.price{
+    background: #ffc600;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.price1{
+    grid-area: price1;
+}
+
+.price2{
+    grid-area: price2;
+}
+
+.price h1,.intro h1{
+    margin-bottom: 0;
+}
+
+.feature h3,.price h4{
+    margin-top: 0;
+}
+
+.middle{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)  );
+    padding: 20px 0;
+}
+
+.feature{
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.icon{
+    font-size: 50px;
+}
+
+.about{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    background-color: white;
+}
+
+img{
+    max-width: 100% ;
+}
+
+.gallery h2{
+    grid-column: 1/-1;
+    display: grid;
+    grid-gap: 15px;
+    text-align: center;
+}
+
+.gallery h2:before, .gallery h2:after {
+    display: block;
+    content: '';
+    height: 10px;
+    background: linear-gradient(to left,transparent, #ffc600, transparent);
+}
+
+.gallery{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img{
+    width: 100%;
+}
+
+.btn{
+    font-size: 1em;
+    transition: all 0.5s;
+}
+
+.btn:hover,.about a:hover{
+    color: grey;
+    box-shadow: 0 0.5em 0.5em -0.4em black;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+footer{
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+
+}
+
+.developer{
+    margin-bottom: 5px;
+}
+
+.copyright{
+    margin-top: 0;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.btn1{
+    color: white;
+}
+
+.btn1:hover{
+    color: rgb(13, 19, 43);
+    cursor: pointer;
+}
+
+@media(max-width: 1000px ){
+    .menu{
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media(max-width: 700px){
+    .menu{
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .header{
+        grid-template-areas: "intro intro" "price1 price2";
+    }
+
+    .about{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px){
+    .header{
+        grid-template-areas: "intro" "price1" "price2";
+    }
+}
+
+@media(max-width: 400px){
+    .menu{
+        grid-auto-flow: dense;
+    }
+}
